@@ -11,8 +11,10 @@ public class PinCodeValidation {
 		
 		String pin1 = "400088";
 		String pin2 = "A40008";
+		String pin3 = "400088B";
 		validate.validatePinCode(pin1);
 		validate.validatePinCode(pin2);
+		validate.validatePinCode(pin3);
 	}
 	
 	public void validatePinCode(String input) {
