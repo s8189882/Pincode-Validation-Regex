@@ -22,7 +22,7 @@ public class PinCodeValidation {
 	
 	public void validatePinCode(String input) {
 		
-		String pinCode = "^[0-9]{3}[\s]{0,1}[0-9]{3}$";
+		String pinCode = "^[0-9]{3}[\s]?[0-9]{3}$";
 		
 		Pattern pattern = Pattern.compile(pinCode);
 		Matcher match = pattern.matcher(input);
