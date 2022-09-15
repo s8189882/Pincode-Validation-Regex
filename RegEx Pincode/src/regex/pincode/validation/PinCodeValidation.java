@@ -9,20 +9,26 @@ public class PinCodeValidation {
 		System.out.println("Welcome to Regular Expressions program to validate PIN code!\n");
 		PinCodeValidation validate = new PinCodeValidation(); 
 		
-		String pin = "400088";
-		if (validate.validatePinCode(pin))
-			System.out.println("\n" + pin + "\tVALID");
-		else
-			System.out.println("\n" + pin + "\tINVALID");
+		String pin1 = "400088";
+		String pin2 = "A40008";
+		validate.validatePinCode(pin1);
+		validate.validatePinCode(pin2);
 	}
 	
-	public boolean validatePinCode(String input) {
+	public void validatePinCode(String input) {
 		
 		String pinCode = "^[0-9]{6}$";
 		
 		Pattern pattern = Pattern.compile(pinCode);
 		Matcher match = pattern.matcher(input);
 		
-		return match.matches();
+		printResult(match.matches(), input);
+	}
+	
+	public void printResult(boolean isOkay, String pin) {
+		if (isOkay)
+			System.out.println("\n" + pin + "\tVALID");
+		else
+			System.out.println("\n" + pin + "\tINVALID");
 	}
 }
